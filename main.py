@@ -1,7 +1,7 @@
 import argparse
 import sys
 from tabulate import tabulate
-from reportes import REPORT
+from reporters import REPORT
 from utils import read_csv_files
 
 
