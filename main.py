@@ -25,8 +25,12 @@ def main():
     report_data = report_func(data)
 
     if args.report == 'average-rating':
-        headers = ["brand", "rating"]
-        table = tabulate(report_data, headers=headers, tablefmt="grid", floatfmt=".2f")
+        enumerate_data = [
+            (i, brand, rating)
+            for i, (brand, rating) in enumerate(report_data, start=1)
+        ]
+        headers = ["", "brand", "rating"]
+        table = tabulate(enumerate_data, headers=headers, tablefmt="grid", floatfmt=".2f")
         print(table)
     else:
         print(tabulate(report_data, tablefmt="grid"))
